@@ -60,6 +60,7 @@ jobs:
           # determine the unique run id necessary to re-run the checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          
 
   # ui-chrome-mobile-tests:
   #   timeout-minutes: 15
@@ -67,10 +68,10 @@ jobs:
   #   container: 
   #     image: cypress/browsers:node16.16.0-chrome105-ff104-edge
   #     options: --user 1001
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       containers: [1, 2, 3, 4, 5]
+    strategy:
+       fail-fast: false
+       matrix:
+         containers: [1, 2, 3, 4, 5]
   #   needs: install
   #   steps:
   #     - name: Checkout
@@ -220,3 +221,4 @@ jobs:
           # Recommended: pass the GitHub token lets this action correctly
           # determine the unique run id necessary to re-run the checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
